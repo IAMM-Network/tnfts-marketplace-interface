@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { Container } from './Components/Layout';
 
 function App() {
   return (
@@ -9,7 +10,9 @@ function App() {
           <span>header</span>
         </div>
         <div className="appBody">
-          <span>Body</span>
+          <Container>
+            <span>Body</span>
+          </Container>
         </div>
         <div className="footer">
           <span>Footer</span>
