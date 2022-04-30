@@ -1,5 +1,6 @@
 body{
-  background-color: #fff;height: 100%;
+  background-color: #1A1A1A;
+  height: 100%;
 }
 
 .App {
@@ -21,15 +22,12 @@ body{
 
 .header{
   grid-area: header;
-  background-color: #a9a3b1;
 }
 
 .appBody{
   grid-area: main;
-  background-color: #d9cae9;
 }
 
 .footer{
   grid-area: footer;
-  background-color: #a9a3b1;
 }
