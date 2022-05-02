@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Flex, Grid } from "../../components/Box";
 import { Container } from "../../components/Layout";
 import {
@@ -12,6 +12,8 @@ import {
 } from "./styles";
 import HeadPurple from "../../assets/images/head-purple.png";
 import { Button } from "../../components/Button";
+import { Context } from "../../contexts/PopupContext";
+import { Popup } from "../../components/Popup";
 
 const CreateSingleNFT = () => {
   const [name, setName] = useState("");
@@ -27,6 +29,8 @@ const CreateSingleNFT = () => {
   );
   const [supply, setSupply] = useState(0);
   const [mintingStatus, setMintingStatus] = useState(0);
+
+  const { isActive } = useContext(Context);
 
   const onSelectedImage = (e: any) => {
     if (!e.target.files || e.target.files.length === 0) {
@@ -56,6 +60,7 @@ const CreateSingleNFT = () => {
 
   return (
     <Container maxWidth="90%">
+    {isActive && <Popup>a</Popup>}
       <Flex flexDirection="column">
         <TitleSection>
           <Text weight={600} size="21px">
