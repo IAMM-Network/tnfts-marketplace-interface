@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { Flex, Grid } from "../../components/Box";
 import { Container } from "../../components/Layout";
 import {
@@ -12,8 +12,7 @@ import {
 } from "./styles";
 import HeadPurple from "../../assets/images/head-purple.png";
 import { Button } from "../../components/Button";
-import { Context } from "../../contexts/PopupContext";
-import { Popup } from "../../components/Popup";
+import { NervosIcon } from "../../components/Svg";
 
 const CreateSingleNFT = () => {
   const [name, setName] = useState("");
@@ -30,8 +29,6 @@ const CreateSingleNFT = () => {
   const [supply, setSupply] = useState(0);
   const [mintingStatus, setMintingStatus] = useState(0);
 
-  const { isActive } = useContext(Context);
-
   const onSelectedImage = (e: any) => {
     if (!e.target.files || e.target.files.length === 0) {
       setSelectedFile(undefined);
@@ -47,20 +44,19 @@ const CreateSingleNFT = () => {
 
   useEffect(() => {
     if (!selectedFile) {
-        setPreview(undefined)
-        return
+      setPreview(undefined);
+      return;
     }
 
-    const objectUrl = URL.createObjectURL(selectedFile)
+    const objectUrl = URL.createObjectURL(selectedFile);
     setPreview(objectUrl);
 
     // free memory when ever this component is unmounted
-    return () => URL.revokeObjectURL(objectUrl)
-}, [selectedFile])
+    return () => URL.revokeObjectURL(objectUrl);
+  }, [selectedFile]);
 
   return (
     <Container maxWidth="90%">
-    {isActive && <Popup>a</Popup>}
       <Flex flexDirection="column">
         <TitleSection>
           <Text weight={600} size="21px">
@@ -96,6 +92,7 @@ const CreateSingleNFT = () => {
             <MediaWrapper>b</MediaWrapper>
 
             <MediaWrapper>c</MediaWrapper>
+
             <MediaWrapper>d</MediaWrapper>
           </Grid>
         </Section>
@@ -108,7 +105,11 @@ const CreateSingleNFT = () => {
             File types supported: JPG, PNG, GIF, SVG.
           </Text>
           <Text margin="0px">Max Size: 100MB</Text>
-          <Input type="file" placeholder="Upload file..." onChange={onSelectedImage} />
+          <Input
+            type="file"
+            placeholder="Upload file..."
+            onChange={onSelectedImage}
+          />
         </Section>
 
         <Section>
@@ -116,7 +117,12 @@ const CreateSingleNFT = () => {
             Preview
           </Text>
           <Preview>
-            <img alt="head-purple" src={selectedFile ? preview : HeadPurple} width={251} height={186} />
+            <img
+              alt="head-purple"
+              src={selectedFile ? preview : HeadPurple}
+              width={251}
+              height={186}
+            />
           </Preview>
         </Section>
 
@@ -157,6 +163,28 @@ const CreateSingleNFT = () => {
             How smart
           </Text>
           <Text margin="0.5rem 0 0 0">Select the predefined smartPlugins</Text>
+
+          <Grid width="100%" gridTemplateColumns="1fr 2fr 1fr">
+            <Grid margin="0px 1rem 1rem 1rem">
+              <NervosIcon />
+            </Grid>
+            <Grid flexDirection="column" width="100%">
+              <Text weight={600}>Ownership Lock</Text>
+              <Text margin="0">Lorem ipsum dolor sit amet</Text>
+            </Grid>
+            <Grid width="100%" alignItems="center" justifyContent="right">
+              <Button
+                style={{ justifyContent: "center" }}
+                variant="secondary"
+                width={44}
+                height={44}
+              >
+                <Text weight={200} size="2rem">
+                  +
+                </Text>
+              </Button>
+            </Grid>
+          </Grid>
         </Section>
 
         <Section>
