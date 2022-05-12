@@ -4,7 +4,7 @@ import Box from "./Box";
 import { GridProps } from "./types";
 
 const Grid = styled(Box)<GridProps>`
-  display: flex;
+  display: grid;
   ${flexbox}
   ${grid}
 `;
