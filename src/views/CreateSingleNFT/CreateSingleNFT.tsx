@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, createElement } from "react";
 import { Flex, Grid } from "../../components/Box";
 import { Container } from "../../components/Layout";
 import {
@@ -12,7 +12,13 @@ import {
 } from "./styles";
 import HeadPurple from "../../assets/images/head-purple.png";
 import { Button } from "../../components/Button";
-import { NervosIcon } from "../../components/Svg";
+import {
+  MediaAudioIcon,
+  MediaImageIcon,
+  MediaStarIcon,
+  MediaVideoIcon,
+  NervosIcon,
+} from "../../components/Svg";
 
 const CreateSingleNFT = () => {
   const [name, setName] = useState("");
@@ -28,6 +34,7 @@ const CreateSingleNFT = () => {
   );
   const [supply, setSupply] = useState(0);
   const [mintingStatus, setMintingStatus] = useState(0);
+  const [mediaSelected, setMediaSelected] = useState(0);
 
   const onSelectedImage = (e: any) => {
     if (!e.target.files || e.target.files.length === 0) {
@@ -55,6 +62,25 @@ const CreateSingleNFT = () => {
     return () => URL.revokeObjectURL(objectUrl);
   }, [selectedFile]);
 
+  const mediaOptions = [
+    {
+      icon: MediaImageIcon,
+      text: "Image",
+    },
+    {
+      icon: MediaVideoIcon,
+      text: "Video",
+    },
+    {
+      icon: MediaAudioIcon,
+      text: "Audio",
+    },
+    {
+      icon: MediaStarIcon,
+      text: "Custom",
+    },
+  ];
+
   return (
     <Container maxWidth="90%">
       <Flex flexDirection="column">
@@ -81,19 +107,26 @@ const CreateSingleNFT = () => {
           <Text weight={600} size="14px">
             File type*
           </Text>
+
           <Grid
-            background="red"
-            gridTemplateColumns="repeat(2, 1fr)"
+            gridTemplateColumns="1fr 1fr"
+            gridTemplateRows="auto"
             gridGap="1rem"
             width="100%"
           >
-            <MediaWrapper>a</MediaWrapper>
-
-            <MediaWrapper>b</MediaWrapper>
-
-            <MediaWrapper>c</MediaWrapper>
-
-            <MediaWrapper>d</MediaWrapper>
+            {mediaOptions.map((e, index) => (
+              <MediaWrapper
+                active={index === mediaSelected}
+                onClick={() => setMediaSelected(index)}
+              >
+                <Grid>
+                  {createElement(e.icon, {
+                    fill: index === mediaSelected ? "white" : "#696969",
+                  })}
+                  <Text size="14px" weight={600}  margin="0.5rem 0 0 0" color={index === mediaSelected ? "white" : "#696969"}>{e.text}</Text>
+                </Grid>
+              </MediaWrapper>
+            ))}
           </Grid>
         </Section>
 

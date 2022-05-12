@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { Box, Flex, Grid } from "../../../components/Box";
+import { Flex, Grid } from "../../../components/Box";
 
 interface TextProps {
+  color?: string;
   size?: number | string;
   weight?: number;
   margin?: string;
@@ -14,7 +15,7 @@ export const TitleSection = styled.div`
 `;
 
 export const Text = styled.h3<TextProps>`
-  color: white;
+  color: ${({ color }) => color ? color : "white"};
   font-size: ${({ size }) => size ? size : "12px"};
   font-weight: ${({ weight }) => weight ? weight : 400};
   margin: ${({ margin }) => margin ? margin:  "0.5rem 0"};
@@ -41,8 +42,11 @@ export const Input = styled.input`
     }
 `
 
-export const MediaWrapper = styled(Grid)`
-  background-color: #8B40F4;
+export const MediaWrapper = styled(Grid)<{active ?: boolean;}>`
+  background-color: ${({ active }) => active ? "#8B40F4" : "#1A1A1A" };
+  border: ${({ active }) => !active ? "1px solid #696969" : "1px solid #8B40F4" };
+  border-radius: 8px;
+  padding: 1rem;
   place-items: center;
   text-align: center;
 `;
