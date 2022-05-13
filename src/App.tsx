@@ -1,11 +1,12 @@
-import React from "react";
+import { FC } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
+
 import { Header } from "./components/Header";
-import { CreateSingleNFT } from "./views/CreateSingleNFT";
+import { RoutesData } from "./views/RoutesData";
 
-function App() {
+import "./App.css";
 
+const App: FC = () => {
   return (
     <div className="App">
       <div className="main">
@@ -13,7 +14,9 @@ function App() {
         <div className="appBody">
           <BrowserRouter>
             <Routes>
-              <Route path="create-single-nft" element={<CreateSingleNFT />} />
+              {RoutesData.map((e) => (
+                <Route path={e.path} element={e.view} />
+              ))}
             </Routes>
           </BrowserRouter>
         </div>
@@ -23,6 +26,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;

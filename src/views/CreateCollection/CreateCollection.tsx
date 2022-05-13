@@ -20,7 +20,7 @@ import {
   NervosIcon,
 } from "../../components/Svg";
 
-const CreateSingleNFT = () => {
+const CreateCollection: React.FC = () => {
   const [name, setName] = useState("");
   const [externalLink, setExternalLink] = useState(
     "https://yoursite.io/item/123"
@@ -80,20 +80,19 @@ const CreateSingleNFT = () => {
       text: "Custom",
     },
   ];
-
   return (
     <Container maxWidth="90%">
       <Flex flexDirection="column">
         <TitleSection>
           <Text weight={600} size="21px">
-            Create smartNFT
+            Create a Collection
           </Text>
           <Text>*Required fields</Text>
         </TitleSection>
 
         <Section justifyContent="left">
           <Text weight={600} size="14px">
-            Display name*
+            Collection Name*
           </Text>
           <Input
             type="text"
@@ -105,41 +104,7 @@ const CreateSingleNFT = () => {
 
         <Section>
           <Text weight={600} size="14px">
-            File type*
-          </Text>
-
-          <Grid
-            gridTemplateColumns="1fr 1fr"
-            gridTemplateRows="auto"
-            gridGap="1rem"
-            width="100%"
-          >
-            {mediaOptions.map((e, index) => (
-              <MediaWrapper
-                active={index === mediaSelected}
-                onClick={() => setMediaSelected(index)}
-              >
-                <Grid>
-                  {createElement(e.icon, {
-                    fill: index === mediaSelected ? "white" : "#696969",
-                  })}
-                  <Text
-                    size="14px"
-                    weight={600}
-                    margin="0.5rem 0 0 0"
-                    color={index === mediaSelected ? "white" : "#696969"}
-                  >
-                    {e.text}
-                  </Text>
-                </Grid>
-              </MediaWrapper>
-            ))}
-          </Grid>
-        </Section>
-
-        <Section>
-          <Text weight={600} size="14px">
-            Upload file
+            Logo Image*
           </Text>
           <Text margin="0.5rem 0 0 0">
             File types supported: JPG, PNG, GIF, SVG.
@@ -168,12 +133,68 @@ const CreateSingleNFT = () => {
 
         <Section>
           <Text weight={600} size="14px">
-            External link
+            Banner Image
           </Text>
           <Text margin="0.5rem 0 0 0">
-            IAMM will add a link to this URL on this item's detail page, so that
-            others can click to learn more about it. You are welcome to link to
-            your own site with more details.
+            File types supported: JPG, PNG, GIF, SVG.
+          </Text>
+          <Text margin="0px">Max Size: 100MB</Text>
+          <Input
+            type="file"
+            placeholder="Upload file..."
+            onChange={onSelectedImage}
+          />
+        </Section>
+
+        <Section>
+          <Text weight={600} size="14px">
+            Preview
+          </Text>
+          <Preview>
+            <img
+              alt="head-purple"
+              src={selectedFile ? preview : HeadPurple}
+              width={251}
+              height={186}
+            />
+          </Preview>
+        </Section>
+
+        <Section>
+          <Text weight={600} size="14px">
+            Featured Image
+          </Text>
+          <Text margin="0.5rem 0 0 0">
+            File types supported: JPG, PNG, GIF, SVG.
+          </Text>
+          <Text margin="0px">Max Size: 100MB</Text>
+          <Input
+            type="file"
+            placeholder="Upload file..."
+            onChange={onSelectedImage}
+          />
+        </Section>
+
+        <Section>
+          <Text weight={600} size="14px">
+            Preview
+          </Text>
+          <Preview>
+            <img
+              alt="head-purple"
+              src={selectedFile ? preview : HeadPurple}
+              width={251}
+              height={186}
+            />
+          </Preview>
+        </Section>
+
+        <Section>
+          <Text weight={600} size="14px">
+            Customized URL
+          </Text>
+          <Text margin="0.5rem 0 0 0">
+            Must only contain lowercase letters, numbers and hyphens.
           </Text>
           <Input
             type="text"
@@ -200,63 +221,102 @@ const CreateSingleNFT = () => {
 
         <Section>
           <Text weight={600} size="14px">
-            How smart
+            Category
           </Text>
-          <Text margin="0.5rem 0 0 0">Select the predefined smartPlugins</Text>
-
-          {[1, 2, 3].map((e) => (
-            <Grid
-              margin="0.5rem 0"
-              width="100%"
-              gridTemplateColumns="1fr 2fr 1fr"
-              alignItems="center"
-            >
-              <Grid alignSelf="center">
-                <NervosIcon />
-              </Grid>
-              <Grid flexDirection="column" width="100%">
-                <Text weight={600}>Ownership Lock</Text>
-                <Text margin="0">Lorem ipsum dolor sit amet</Text>
-              </Grid>
-              <Grid width="100%" alignItems="center" justifyContent="right">
-                <Button
-                  style={{ justifyContent: "center" }}
-                  variant="secondary"
-                  width={44}
-                  height={44}
-                >
-                  <Text weight={200} size="2rem">
-                    +
-                  </Text>
-                </Button>
-              </Grid>
-            </Grid>
-          ))}
+          <Text margin="0.5rem 0 0 0">
+            Adding a category will help make your item discoverable at IAMM. We
+            recommend to use what people is already using, but you can create
+            any.
+          </Text>
+          <select>
+            <option>Art</option>
+            <option>Gaming</option>
+          </select>
         </Section>
 
         <Section>
           <Text weight={600} size="14px">
-            Impact
+            Links
           </Text>
-          <Text margin="0.5rem 0 0 0">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </Text>
+          <Input
+            type="text"
+            placeholder="yoursite.org"
+            value={externalLink}
+            onChange={(e) => setExternalLink(e.target.value)}
+          />
+          <Input
+            type="text"
+            placeholder="discord.gg"
+            value={externalLink}
+            onChange={(e) => setExternalLink(e.target.value)}
+          />
+          <Input
+            type="text"
+            placeholder="twitter.com"
+            value={externalLink}
+            onChange={(e) => setExternalLink(e.target.value)}
+          />
+          <Input
+            type="text"
+            placeholder="instagram.com"
+            value={externalLink}
+            onChange={(e) => setExternalLink(e.target.value)}
+          />
+          <Input
+            type="text"
+            placeholder="t.me"
+            value={externalLink}
+            onChange={(e) => setExternalLink(e.target.value)}
+          />
+          <Input
+            type="text"
+            placeholder="medium.com"
+            value={externalLink}
+            onChange={(e) => setExternalLink(e.target.value)}
+          />
         </Section>
 
         <Section>
           <Text weight={600} size="14px">
-            Supply
+            Creator Earnings{" "}
           </Text>
           <Text margin="0.5rem 0 0 0">
-            The number of items that can be minted.
+            Choose a fee when a user re-sells an item your originally created.
+            This is deducted from the final sale price, and paid monthly to a
+            payout address of your choosing.
           </Text>
           <Input
             type="number"
-            placeholder="#"
+            placeholder="eg: 2.5"
             value={supply}
             onChange={(e) => setSupply(parseInt(e.target.value, 10))}
           />
+        </Section>
+
+        <Section>
+          <Text weight={600} size="14px">
+            Payment tokens{" "}
+          </Text>
+          <Text margin="0.5rem 0 0 0">
+            These tokens can be used to buy and sell your items.
+          </Text>
+        </Section>
+
+        <Section>
+          <Text weight={600} size="14px">
+            Display theme{" "}
+          </Text>
+          <Text margin="0.5rem 0 0 0">Change how your items are shown.</Text>
+        </Section>
+
+        <Section>
+          <Text weight={600} size="14px">
+            NSFW Content{" "}
+          </Text>
+          <Text margin="0.5rem 0 0 0">
+            Set this item as explicit and sensitive content (as Not Safe For
+            Work)
+          </Text>
         </Section>
 
         <Flex justifyContent="center">
@@ -269,4 +329,4 @@ const CreateSingleNFT = () => {
   );
 };
 
-export default CreateSingleNFT;
+export default CreateCollection;
