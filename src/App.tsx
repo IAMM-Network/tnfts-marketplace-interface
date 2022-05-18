@@ -10,16 +10,16 @@ const App: FC = () => {
   return (
     <div className="App">
       <div className="main">
-        <Header />
-        <div className="appBody">
-          <BrowserRouter>
+        <BrowserRouter>
+          <Header />
+          <div className="appBody">
             <Routes>
               {RoutesData.map((e) => (
-                <Route path={e.path} element={e.view} />
+                <Route key={e.path} path={e.path} element={e.view} />
               ))}
             </Routes>
-          </BrowserRouter>
-        </div>
+          </div>
+        </BrowserRouter>
         <div className="footer">
           <span>Footer</span>
         </div>
