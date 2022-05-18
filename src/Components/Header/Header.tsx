@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Container } from "../Layout";
 import { HeaderWrapper, HeaderContent } from "./styles";
 import IAMMIcon from "../../assets/images/iamm-logo.png";
-import Hamburger from 'hamburger-react'
+import Hamburger from "hamburger-react";
 
 const Header: React.FC = () => {
-  const [isOpen, setOpen] = useState(false)
+  const [isOpen, setOpen] = useState(false);
+
+  const { pathname } = useLocation();
 
   return (
-    <HeaderWrapper>
+    <HeaderWrapper main={pathname !== "/"}>
       <Container maxWidth="90%">
         <HeaderContent>
           <img src={IAMMIcon} alt="iamm-icon" width={100} height={48} />
