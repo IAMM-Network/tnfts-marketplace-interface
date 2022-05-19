@@ -14,10 +14,3 @@ export const HeaderWrapper = styled(Box)<{ main?: boolean }>`
     width: 100%;
   }
 `;
-
-export const HeaderContent = styled(Box)`
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-`;
