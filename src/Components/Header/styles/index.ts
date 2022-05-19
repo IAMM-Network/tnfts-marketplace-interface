@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Box } from "../../Box";
 
-export const HeaderWrapper = styled.div<{ main?: boolean }>`
+export const HeaderWrapper = styled(Box)<{ main?: boolean }>`
   align-items: center;
   background-color: ${({ main }) => (main ? "#8B40F4" : "#1A1A1A")};
   display: flex;
@@ -14,7 +15,7 @@ export const HeaderWrapper = styled.div<{ main?: boolean }>`
   }
 `;
 
-export const HeaderContent = styled.div`
+export const HeaderContent = styled(Box)`
   align-items: center;
   display: flex;
   justify-content: space-between;
