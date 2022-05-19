@@ -11,7 +11,7 @@ const Home: FC = () => {
     <HomeWrapper>
       <Container>
         <Grid alignItems="center" justifyContent="center">
-          <Title>Create, collect, mix & pimp smartNFTs</Title>
+          <Title>Create, collect, mix & pimp – libreNFT</Title>
           <HeadText>
             Building libre and creative economies through impact meta-markets
           </HeadText>
