@@ -1,4 +1,5 @@
 export { default as IAMMIcon } from "./Icons/IAMMIcon";
+export { default as IAMMTextIcon } from "./Icons/IAMMTextIcon";
 export { default as MediaAudioIcon } from "./Icons/MediaAudioIcon";
 export { default as MediaImageIcon } from "./Icons/MediaImageIcon";
 export { default as MediaStarIcon } from "./Icons/MediaStarIcon";
