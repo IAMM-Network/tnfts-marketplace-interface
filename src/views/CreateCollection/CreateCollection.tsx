@@ -1,23 +1,21 @@
-import { useState, useEffect, createElement } from "react";
-import { Flex, Grid } from "../../components/Box";
+import { useState, useEffect } from "react";
+import { Flex } from "../../components/Box";
 import { Container } from "../../components/Layout";
 import {
   TitleSection,
   Text,
   Section,
   Input,
-  MediaWrapper,
   Preview,
   TextArea,
 } from "./styles";
 import HeadPurple from "../../assets/images/head-purple.png";
 import { Button } from "../../components/Button";
 import {
-  MediaAudioIcon,
-  MediaImageIcon,
-  MediaStarIcon,
-  MediaVideoIcon,
-  NervosIcon,
+  AudioFileIcon,
+  ImageFileIcon,
+  StarIcon,
+  VideFileIcon,
 } from "../../components/Svg";
 
 const CreateCollection: React.FC = () => {
@@ -64,19 +62,19 @@ const CreateCollection: React.FC = () => {
 
   const mediaOptions = [
     {
-      icon: MediaImageIcon,
+      icon: ImageFileIcon,
       text: "Image",
     },
     {
-      icon: MediaVideoIcon,
+      icon: VideFileIcon,
       text: "Video",
     },
     {
-      icon: MediaAudioIcon,
+      icon: AudioFileIcon,
       text: "Audio",
     },
     {
-      icon: MediaStarIcon,
+      icon: StarIcon,
       text: "Custom",
     },
   ];

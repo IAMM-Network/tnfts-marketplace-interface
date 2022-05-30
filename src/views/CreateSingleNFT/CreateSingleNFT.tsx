@@ -13,11 +13,11 @@ import {
 import HeadPurple from "../../assets/images/head-purple.png";
 import { Button } from "../../components/Button";
 import {
-  MediaAudioIcon,
-  MediaImageIcon,
-  MediaStarIcon,
-  MediaVideoIcon,
-  NervosIcon,
+  AudioFileIcon,
+  ImageFileIcon,
+  VideFileIcon,
+  StarIcon,
+  CKBCircleIcon,
 } from "../../components/Svg";
 
 const CreateSingleNFT = () => {
@@ -64,19 +64,19 @@ const CreateSingleNFT = () => {
 
   const mediaOptions = [
     {
-      icon: MediaImageIcon,
+      icon: ImageFileIcon,
       text: "Image",
     },
     {
-      icon: MediaVideoIcon,
+      icon: VideFileIcon,
       text: "Video",
     },
     {
-      icon: MediaAudioIcon,
+      icon: AudioFileIcon,
       text: "Audio",
     },
     {
-      icon: MediaStarIcon,
+      icon: StarIcon,
       text: "Custom",
     },
   ];
@@ -122,6 +122,7 @@ const CreateSingleNFT = () => {
                 <Grid>
                   {createElement(e.icon, {
                     fill: index === mediaSelected ? "white" : "#696969",
+                    width: 70
                   })}
                   <Text
                     size="14px"
@@ -212,7 +213,7 @@ const CreateSingleNFT = () => {
               alignItems="center"
             >
               <Grid alignSelf="center">
-                <NervosIcon />
+                <CKBCircleIcon width={40} />
               </Grid>
               <Grid flexDirection="column" width="100%">
                 <Text weight={600}>Ownership Lock</Text>
