@@ -1,6 +1,9 @@
 import { useState, useEffect, createElement } from "react";
 import { Flex, Grid } from "../../components/Box";
 import { Container } from "../../components/Layout";
+import HeadPurple from "../../assets/images/head-purple.png";
+import { Button } from "../../components/Button";
+import { KeyIcon } from "../../components/Svg";
 import {
   TitleSection,
   Text,
@@ -10,29 +13,20 @@ import {
   Preview,
   TextArea,
 } from "./styles";
-import HeadPurple from "../../assets/images/head-purple.png";
-import { Button } from "../../components/Button";
-import {
-  AudioFileIcon,
-  ImageFileIcon,
-  VideFileIcon,
-  StarIcon,
-  CKBCircleIcon,
-} from "../../components/Svg";
+import { mediaOptions } from "./Data";
 
 const CreateSingleNFT = () => {
   const [name, setName] = useState("");
   const [externalLink, setExternalLink] = useState(
     "https://yoursite.io/item/123"
   );
-
   const [selectedFile, setSelectedFile] = useState(undefined);
   const [preview, setPreview] = useState<string | undefined>(undefined);
-
   const [description, setDescription] = useState(
     "We suggest a nice and detailed description for your item, but 120 character only."
   );
   const [supply, setSupply] = useState(0);
+
   const [mintingStatus, setMintingStatus] = useState(0);
   const [mediaSelected, setMediaSelected] = useState(0);
 
@@ -61,25 +55,6 @@ const CreateSingleNFT = () => {
     // free memory when ever this component is unmounted
     return () => URL.revokeObjectURL(objectUrl);
   }, [selectedFile]);
-
-  const mediaOptions = [
-    {
-      icon: ImageFileIcon,
-      text: "Image",
-    },
-    {
-      icon: VideFileIcon,
-      text: "Video",
-    },
-    {
-      icon: AudioFileIcon,
-      text: "Audio",
-    },
-    {
-      icon: StarIcon,
-      text: "Custom",
-    },
-  ];
 
   return (
     <Container maxWidth="90%">
@@ -162,7 +137,6 @@ const CreateSingleNFT = () => {
               alt="head-purple"
               src={selectedFile ? preview : HeadPurple}
               width={251}
-              height={186}
             />
           </Preview>
         </Section>
@@ -205,34 +179,34 @@ const CreateSingleNFT = () => {
           </Text>
           <Text margin="0.5rem 0 0 0">Select the predefined smartPlugins</Text>
 
-          {[1, 2, 3].map((e) => (
-            <Grid
-              margin="0.5rem 0"
-              width="100%"
-              gridTemplateColumns="1fr 2fr 1fr"
-              alignItems="center"
-            >
-              <Grid alignSelf="center">
-                <CKBCircleIcon width={40} />
-              </Grid>
-              <Grid flexDirection="column" width="100%">
-                <Text weight={600}>Ownership Lock</Text>
-                <Text margin="0">Lorem ipsum dolor sit amet</Text>
-              </Grid>
-              <Grid width="100%" alignItems="center" justifyContent="right">
-                <Button
-                  style={{ justifyContent: "center" }}
-                  variant="secondary"
-                  width={44}
-                  height={44}
-                >
-                  <Text weight={200} size="2rem">
-                    +
-                  </Text>
-                </Button>
-              </Grid>
+          <Grid
+            margin="0.5rem 0"
+            width="100%"
+            gridTemplateColumns="1fr 2fr 1fr"
+            alignItems="center"
+          >
+            <Grid alignSelf="center">
+              <KeyIcon fill="#8B40F4" />
             </Grid>
-          ))}
+            <Grid flexDirection="column" width="100%">
+              <Text weight={600}>Ownership Lock</Text>
+              <Text margin="0">Lorem ipsum dolor sit amet</Text>
+            </Grid>
+            <Grid width="100%" alignItems="center" justifyContent="right">
+              <Button
+                style={{ justifyContent: "center" }}
+                variant="secondary"
+                width={44}
+                height={44}
+              >
+                <Text weight={200} size="2rem">
+                  +
+                </Text>
+              </Button>
+            </Grid>
+          </Grid>
+
+
         </Section>
 
         <Section>

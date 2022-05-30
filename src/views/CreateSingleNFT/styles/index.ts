@@ -57,7 +57,10 @@ export const Preview = styled(Flex)`
   height: 202px;
   padding: 1rem;
   justify-content: center;
-  max-width: 90%;
+  
+  img {
+    margin: 0;
+  }
 `;
 
 export const TextArea = styled.textarea`
