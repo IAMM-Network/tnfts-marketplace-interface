@@ -24,11 +24,10 @@ const Svg = styled.svg<SvgProps>`
 `;
 
 Svg.defaultProps = {
-  color: "text",
   width: "25px",
   xmlns: "http://www.w3.org/2000/svg",
   spin: false,
-  fill: "white"
+  fill: "white",
 };
 
 export default Svg;
