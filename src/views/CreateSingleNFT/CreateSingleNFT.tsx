@@ -83,7 +83,7 @@ const CreateSingleNFT = () => {
 
   return (
     <Container maxWidth='90%'>
-      <Flex flexDirection='column'>
+      <Flex flexDirection='column' paddingTop="104px">
         <TitleSection>
           <Text weight={600} size='21px'>
             Create smartNFT
