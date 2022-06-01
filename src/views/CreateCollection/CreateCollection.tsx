@@ -11,12 +11,6 @@ import {
 } from "./styles";
 import HeadPurple from "../../assets/images/head-purple.png";
 import { Button } from "../../components/Button";
-import {
-  AudioFileIcon,
-  ImageFileIcon,
-  StarIcon,
-  VideFileIcon,
-} from "../../components/Svg";
 
 const CreateCollection: React.FC = () => {
   const [name, setName] = useState("");
