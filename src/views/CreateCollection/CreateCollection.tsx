@@ -32,7 +32,6 @@ const CreateCollection: React.FC = () => {
   );
   const [supply, setSupply] = useState(0);
   const [mintingStatus, setMintingStatus] = useState(0);
-  const [mediaSelected, setMediaSelected] = useState(0);
 
   const onSelectedImage = (e: any) => {
     if (!e.target.files || e.target.files.length === 0) {
@@ -60,24 +59,6 @@ const CreateCollection: React.FC = () => {
     return () => URL.revokeObjectURL(objectUrl);
   }, [selectedFile]);
 
-  const mediaOptions = [
-    {
-      icon: ImageFileIcon,
-      text: "Image",
-    },
-    {
-      icon: VideFileIcon,
-      text: "Video",
-    },
-    {
-      icon: AudioFileIcon,
-      text: "Audio",
-    },
-    {
-      icon: StarIcon,
-      text: "Custom",
-    },
-  ];
   return (
     <Container maxWidth="90%">
       <Flex flexDirection="column">
@@ -319,7 +300,7 @@ const CreateCollection: React.FC = () => {
 
         <Flex justifyContent="center">
           <Button onClick={createNFT} variant="cta">
-            {mintingStatus == 0 ? "Create" : "Minting..."}
+            {mintingStatus === 0 ? "Create" : "Minting..."}
           </Button>
         </Flex>
       </Flex>

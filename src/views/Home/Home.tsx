@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Box, Grid } from "../../components/Box";
+import { Grid } from "../../components/Box";
 import { HomeWrapper, Title, HeadText, HeadImage } from "./styles";
 import { Button } from "../../components/Button";
 import { Container } from "../../components/Layout";

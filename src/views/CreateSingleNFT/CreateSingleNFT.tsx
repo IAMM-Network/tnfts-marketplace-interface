@@ -236,7 +236,7 @@ const CreateSingleNFT = () => {
 
         <Flex justifyContent="center">
           <Button onClick={createNFT} variant="cta">
-            {mintingStatus == 0 ? "Create" : "Minting..."}
+            {mintingStatus === 0 ? "Create" : "Minting..."}
           </Button>
         </Flex>
       </Flex>
