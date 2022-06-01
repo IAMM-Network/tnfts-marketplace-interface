@@ -4,7 +4,7 @@ import { HomeWrapper, Title, HeadText, HeadImage } from './styles';
 import { Button } from '../../components/Button';
 import { Container } from '../../components/Layout';
 
-import IAMMGradientIcon from '../../assets/images/iamm-3d-gradient.png';
+import IAMMGradientIcon from '../../assets/images/iamm-home.png';
 
 const Home: FC = () => {
   return (
