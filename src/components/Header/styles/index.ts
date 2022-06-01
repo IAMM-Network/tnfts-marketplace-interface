@@ -6,6 +6,7 @@ export const HeaderWrapper = styled(Box)<{ main?: boolean }>`
   background-color: ${({ main }) => (main ? "#8B40F4" : "#1A1A1A")};
   display: flex;
   height: 80px;
+  position: fixed;
   width: 100vw;
 
   .container {
