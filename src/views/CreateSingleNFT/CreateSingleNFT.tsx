@@ -18,6 +18,7 @@ const CreateSingleNFT = () => {
   const [supply, setSupply] = useState(0);
 
   // NFT Smart Settings
+  /*
   const [smartNFT, setSmartNFT] = useState({
     multiSignature: false,
     fractional: false,
@@ -32,20 +33,25 @@ const CreateSingleNFT = () => {
     interoperable: false,
     extensible: false,
   });
+  */
 
+  /*
   const [nftProperties, setNFTProperties] = useState([
     {
       type: '',
       name: '',
     },
   ]);
+  */
 
+  /*
   const [nftLevels, setNFTLevels] = useState([
     {
       name: '',
       value: [1, 6],
     },
   ]);
+  */
 
   const [mintingStatus, setMintingStatus] = useState<number>(0);
 
