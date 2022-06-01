@@ -1,9 +1,9 @@
 import React from "react";
 import {
-  MediaAudioIcon,
-  MediaImageIcon,
-  MediaStarIcon,
-  MediaVideoIcon,
+  AudioFileIcon,
+  ImageFileIcon,
+  StarIcon,
+  VideFileIcon,
   SvgProps,
 } from "../../components/Svg";
 
@@ -14,19 +14,19 @@ export interface MediaOptionsProps {
 
 export const mediaOptions: MediaOptionsProps[] = [
   {
-    icon: MediaImageIcon,
+    icon: ImageFileIcon,
     text: "Image",
   },
   {
-    icon: MediaVideoIcon,
+    icon: VideFileIcon,
     text: "Video",
   },
   {
-    icon: MediaAudioIcon,
+    icon: AudioFileIcon,
     text: "Audio",
   },
   {
-    icon: MediaStarIcon,
+    icon: StarIcon,
     text: "Custom",
   },
 ];
