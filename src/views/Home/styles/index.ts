@@ -11,7 +11,7 @@ export const HomeWrapper = styled(Box)`
   .container {
     display: grid;
     height: 100%;
-    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     max-width: 90%;
   }
 `;

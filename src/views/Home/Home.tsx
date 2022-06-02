@@ -9,13 +9,13 @@ const Home: FC = () => {
   return (
     <HomeWrapper>
       <Container>
-        <Grid alignItems='center' justifyContent='center'>
+        <Grid alignItems='end' justifyContent='center' marginBottom="-24px">
           <Title>Create, collect, mix & pimp – libreNFT</Title>
         </Grid>
-        <Grid justifyContent='center' alignItems='center'>
+        <Grid alignItems='center' justifyContent='center'>
           <HeadImage width={330} src={IAMMGradientIcon} alt='IAMM-3d-gradient-icon' />
         </Grid>
-        <Grid justifyContent='center' alignItems='center'>
+        <Grid alignItems='start' justifyContent='center' marginTop="-24px">
           <HeadText>Building libre and creative economies through impact meta-markets</HeadText>
         </Grid>
       </Container>
