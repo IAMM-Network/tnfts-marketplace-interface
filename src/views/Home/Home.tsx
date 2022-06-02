@@ -11,7 +11,6 @@ const Home: FC = () => {
       <Container>
         <Grid alignItems='center' justifyContent='center'>
           <Title>Create, collect, mix & pimp – libreNFT</Title>
-          <HeadText>Building libre and creative economies through impact meta-markets</HeadText>
         </Grid>
         <Grid justifyContent='center' alignItems='center'>
           <HeadImage width={330} src={IAMMGradientIcon} alt='IAMM-3d-gradient-icon' />
