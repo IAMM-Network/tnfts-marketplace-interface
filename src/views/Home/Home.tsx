@@ -18,9 +18,7 @@ const Home: FC = () => {
           <HeadImage width={330} src={IAMMGradientIcon} alt='IAMM-3d-gradient-icon' />
         </Grid>
         <Grid justifyContent='center' alignItems='center'>
-          <a style={{ textDecoration: 'none' }} href='https://discord.com/invite/jQ4rGjj7fZ' target='_blank' rel='noreferrer'>
-            <Button variant='cta'>JOIN OUR DISCORD</Button>
-          </a>
+          <HeadText>Building libre and creative economies through impact meta-markets</HeadText>
         </Grid>
       </Container>
     </HomeWrapper>
