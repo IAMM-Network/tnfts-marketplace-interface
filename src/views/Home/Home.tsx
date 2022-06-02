@@ -13,9 +13,9 @@ const Home: FC = () => {
           <Title>Create, collect, mix & pimp – libreNFT</Title>
         </Grid>
         <Grid alignItems='center' justifyContent='center'>
-          <HeadImage width={330} src={IAMMGradientIcon} alt='IAMM-3d-gradient-icon' />
+          <HeadImage width={280} src={IAMMGradientIcon} alt='IAMM-3d-gradient-icon' />
         </Grid>
-        <Grid alignItems='start' justifyContent='center' marginTop="-24px">
+        <Grid alignItems='start' justifyContent='center' marginTop="-32px">
           <HeadText>Building libre and creative economies through impact meta-markets</HeadText>
         </Grid>
       </Container>
