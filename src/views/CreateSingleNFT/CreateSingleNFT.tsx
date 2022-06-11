@@ -1,21 +1,21 @@
-import { useState, useEffect, createElement } from 'react';
-import { Flex, Grid } from '../../components/Box';
-import { Container } from '../../components/Layout';
-import HeadPurple from '../../assets/images/head-purple.png';
-import { Button } from '../../components/Button';
-import { AlertIcon, KeyIcon, OpenEyeIcon, StarIcon, TextBaseIcon, TimelockIcon, VerticalBarsIcon } from '../../components/Svg';
-import { Toggle } from "react-toggle-component";
-import { TitleSection, Text, Section, Input, MediaWrapper, Preview, TextArea } from './styles';
-import { mediaOptions } from './Data';
+import { useState, useEffect, createElement } from 'react'
+import { Flex, Grid } from '../../components/Box'
+import { Container } from '../../components/Layout'
+import HeadPurple from '../../assets/images/head-purple.png'
+import { Button } from '../../components/Button'
+import { AlertIcon, KeyIcon, OpenEyeIcon, StarIcon, TextBaseIcon, TimelockIcon, VerticalBarsIcon } from '../../components/Svg'
+import { Toggle } from 'react-toggle-component'
+import { TitleSection, Text, Section, Input, MediaWrapper, Preview, TextArea } from './styles'
+import { mediaOptions } from './Data'
 
 const CreateSingleNFT = () => {
-  const [name, setName] = useState<string>();
-  const [mediaSelected, setMediaSelected] = useState<number>(0);
-  const [selectedFile, setSelectedFile] = useState(undefined);
-  const [preview, setPreview] = useState<string>();
-  const [externalLink, setExternalLink] = useState<string>();
-  const [description, setDescription] = useState<string>();
-  const [supply, setSupply] = useState(0);
+  const [name, setName] = useState<string>()
+  const [mediaSelected, setMediaSelected] = useState<number>(0)
+  const [selectedFile, setSelectedFile] = useState(undefined)
+  const [preview, setPreview] = useState<string>()
+  const [externalLink, setExternalLink] = useState<string>()
+  const [description, setDescription] = useState<string>()
+  const [supply, setSupply] = useState(0)
 
   // NFT Smart Settings
   /*
@@ -53,37 +53,37 @@ const CreateSingleNFT = () => {
   ]);
   */
 
-  const [mintingStatus, setMintingStatus] = useState<number>(0);
+  const [mintingStatus, setMintingStatus] = useState<number>(0)
 
   const onSelectedImage = (e: any) => {
     if (!e.target.files || e.target.files.length === 0) {
-      setSelectedFile(undefined);
-      return;
+      setSelectedFile(undefined)
+      return
     }
 
-    setSelectedFile(e.target.files[0]);
-  };
+    setSelectedFile(e.target.files[0])
+  }
 
   const createNFT = () => {
-    return setMintingStatus(1);
-  };
+    return setMintingStatus(1)
+  }
 
   useEffect(() => {
     if (!selectedFile) {
-      setPreview(undefined);
-      return;
+      setPreview(undefined)
+      return
     }
 
-    const objectUrl = URL.createObjectURL(selectedFile);
-    setPreview(objectUrl);
+    const objectUrl = URL.createObjectURL(selectedFile)
+    setPreview(objectUrl)
 
     // free memory when ever this component is unmounted
-    return () => URL.revokeObjectURL(objectUrl);
-  }, [selectedFile]);
+    return () => URL.revokeObjectURL(objectUrl)
+  }, [selectedFile])
 
   return (
     <Container maxWidth='90%'>
-      <Flex flexDirection='column' paddingTop="104px">
+      <Flex flexDirection='column' paddingTop='104px'>
         <TitleSection>
           <Text weight={600} size='21px'>
             Create smartNFT
@@ -224,7 +224,6 @@ const CreateSingleNFT = () => {
               </Button>
             </Grid>
           </Grid>
-
         </Section>
 
         <Section>
@@ -296,12 +295,13 @@ const CreateSingleNFT = () => {
             </Grid>
             <Grid width='100%' alignItems='center' justifyContent='right'>
               <Toggle
-                leftBackgroundColor="#696969"
-                rightBackgroundColor="#8B40F4"
-                borderColor="#696969"
-                knobColor="#1A1A1A"
-                name="toggle-nsfw"
-                onToggle={e => console.log("onToggle", (e.target as HTMLInputElement).checked)} />
+                leftBackgroundColor='#696969'
+                rightBackgroundColor='#8B40F4'
+                borderColor='#696969'
+                knobColor='#1A1A1A'
+                name='toggle-nsfw'
+                onToggle={e => console.log('onToggle', (e.target as HTMLInputElement).checked)}
+              />
             </Grid>
           </Grid>
         </Section>
@@ -314,14 +314,14 @@ const CreateSingleNFT = () => {
           <Input type='number' placeholder='#' value={supply} onChange={e => setSupply(parseInt(e.target.value, 10))} />
         </Section>
 
-        <Flex justifyContent="center">
-          <Button onClick={createNFT} variant="cta">
-            {mintingStatus === 0 ? "Create" : "Minting..."}
+        <Flex justifyContent='center'>
+          <Button onClick={createNFT} variant='cta'>
+            {mintingStatus === 0 ? 'Create' : 'Minting...'}
           </Button>
         </Flex>
       </Flex>
     </Container>
-  );
-};
+  )
+}
 
-export default CreateSingleNFT;
+export default CreateSingleNFT

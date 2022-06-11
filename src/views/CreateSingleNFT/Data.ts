@@ -1,32 +1,26 @@
-import React from "react";
-import {
-  AudioFileIcon,
-  ImageFileIcon,
-  StarIcon,
-  VideFileIcon,
-  SvgProps,
-} from "../../components/Svg";
+import React from 'react'
+import { AudioFileIcon, ImageFileIcon, StarIcon, VideFileIcon, SvgProps } from '../../components/Svg'
 
 export interface MediaOptionsProps {
-  icon: React.FC<SvgProps>;
-  text: string;
+  icon: React.FC<SvgProps>
+  text: string
 }
 
 export const mediaOptions: MediaOptionsProps[] = [
   {
     icon: ImageFileIcon,
-    text: "Image",
+    text: 'Image',
   },
   {
     icon: VideFileIcon,
-    text: "Video",
+    text: 'Video',
   },
   {
     icon: AudioFileIcon,
-    text: "Audio",
+    text: 'Audio',
   },
   {
     icon: StarIcon,
-    text: "Custom",
+    text: 'Custom',
   },
-];
+]

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import { Container } from '../Layout';
-import { HeaderWrapper } from './styles';
-import { DiscordMediaIcon, IAMMTextIcon, TwitterMediaIcon } from '../Svg';
-import { Box, Flex } from '../Box';
-import Hamburger from 'hamburger-react';
+import React, { useState } from 'react'
+import { useLocation } from 'react-router-dom'
+import { Container } from '../Layout'
+import { HeaderWrapper } from './styles'
+import { DiscordMediaIcon, IAMMTextIcon, TwitterMediaIcon } from '../Svg'
+import { Box, Flex } from '../Box'
+import Hamburger from 'hamburger-react'
 
 const socialMedia = () => (
   <Flex>
@@ -19,19 +19,19 @@ const socialMedia = () => (
       </a>
     </Box>
   </Flex>
-);
+)
 
 const hamburguerMenu = (color: string, toggled: boolean, toggle: React.Dispatch<React.SetStateAction<boolean>>) => (
   <Flex>
     <Hamburger color={color} toggled={toggled} toggle={toggle} />
   </Flex>
-);
+)
 
 const Header: React.FC = () => {
-  const { pathname } = useLocation();
-  const [isOpen, setIsOpen] = useState(false);
+  const { pathname } = useLocation()
+  const [isOpen, setIsOpen] = useState(false)
 
-  const getRender = (): boolean => pathname !== '/';
+  const getRender = (): boolean => pathname !== '/'
 
   return (
     <HeaderWrapper main={getRender()}>
@@ -42,7 +42,7 @@ const Header: React.FC = () => {
         </Flex>
       </Container>
     </HeaderWrapper>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

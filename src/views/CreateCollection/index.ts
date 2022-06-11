@@ -1,1 +1,1 @@
-export { default as CreateCollection } from "./CreateCollection";
+export { default as CreateCollection } from './CreateCollection'

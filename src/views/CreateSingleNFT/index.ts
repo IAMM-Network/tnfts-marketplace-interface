@@ -1,1 +1,1 @@
-export { default as CreateSingleNFT } from "./CreateSingleNFT";
+export { default as CreateSingleNFT } from './CreateSingleNFT'

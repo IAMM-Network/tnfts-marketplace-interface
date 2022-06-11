@@ -1,18 +1,18 @@
-import { CreateCollection } from "./CreateCollection";
-import { CreateSingleNFT } from "./CreateSingleNFT";
-import { Home } from "./Home";
+import { CreateCollection } from './CreateCollection'
+import { CreateSingleNFT } from './CreateSingleNFT'
+import { Home } from './Home'
 
 export const RoutesData = [
   {
     view: <Home />,
-    path: "/"
+    path: '/',
   },
   {
     view: <CreateSingleNFT />,
-    path: "create-single-nft",
+    path: 'create-single-nft',
   },
   {
     view: <CreateCollection />,
-    path: "create-collection",
+    path: 'create-collection',
   },
-];
+]

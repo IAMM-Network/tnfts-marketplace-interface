@@ -1,3 +1,3 @@
-type StringKeyPair = Record<string,string>;
+type StringKeyPair = Record<string, string>
 
-export default StringKeyPair;
+export default StringKeyPair

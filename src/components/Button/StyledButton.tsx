@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { space, layout, variant } from "styled-system";
-import { styleVariants } from "./theme";
+import styled from 'styled-components'
+import { space, layout, variant } from 'styled-system'
+import { styleVariants } from './theme'
 
 const StyledButton = styled.button`
   align-items: center;
@@ -20,6 +20,6 @@ const StyledButton = styled.button`
 
   ${layout}
   ${space}
-`;
+`
 
-export default StyledButton;
+export default StyledButton

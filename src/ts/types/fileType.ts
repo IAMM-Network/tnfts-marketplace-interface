@@ -1,3 +1,3 @@
-type FileType = "image" | "video" | "audio" | "code";
+type FileType = 'image' | 'video' | 'audio' | 'code'
 
-export default FileType;
+export default FileType

@@ -1,0 +1,11 @@
+# Ignore public
+public
+# Ignore all HTML files
+*.html
+# Ignore external source files
+.gitignore
+.prettierrc
+package.json
+README.md
+tsconfig.json
+yarn.lock
