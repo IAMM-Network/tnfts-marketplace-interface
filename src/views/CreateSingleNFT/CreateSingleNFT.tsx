@@ -297,7 +297,8 @@ const CreateSingleNFT = () => {
               <Toggle
                 leftBackgroundColor='#696969'
                 rightBackgroundColor='#8B40F4'
-                borderColor='#696969'
+                leftBorderColor='#696969'
+                rightBorderColor='#8B40F4'
                 knobColor='#1A1A1A'
                 name='toggle-nsfw'
                 onToggle={e => console.log('onToggle', (e.target as HTMLInputElement).checked)}
