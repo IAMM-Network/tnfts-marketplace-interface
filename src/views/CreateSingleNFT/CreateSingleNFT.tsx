@@ -3,10 +3,11 @@ import { Flex, Grid } from '../../components/Box'
 import { Container } from '../../components/Layout'
 import HeadPurple from '../../assets/images/head-purple.png'
 import { Button } from '../../components/Button'
-import { AlertIcon, KeyIcon, OpenEyeIcon, StarIcon, TextBaseIcon, TimelockIcon, VerticalBarsIcon } from '../../components/Svg'
+import { AlertIcon, OpenEyeIcon, StarIcon, TextBaseIcon, TimelockIcon, VerticalBarsIcon } from '../../components/Svg'
 import { Toggle } from 'react-toggle-component'
 import { TitleSection, Text, Section, Input, MediaWrapper, Preview, TextArea } from './styles'
 import { mediaOptions } from './Data'
+import OwnerShipLock from './components/OwnershipLock/OwnershipLock'
 
 const CreateSingleNFT = () => {
   const [name, setName] = useState<string>()
@@ -174,22 +175,7 @@ const CreateSingleNFT = () => {
           </Text>
           <Text margin='0.5rem 0 0 0'>Select the predefined smartPlugins</Text>
 
-          <Grid margin='0.5rem 0' width='100%' gridTemplateColumns='1fr 2fr 1fr' alignItems='center'>
-            <Grid alignSelf='center'>
-              <KeyIcon fill='#8B40F4' />
-            </Grid>
-            <Grid flexDirection='column' width='100%'>
-              <Text weight={600}>Ownership Lock</Text>
-              <Text margin='0'>Lorem ipsum dolor sit amet</Text>
-            </Grid>
-            <Grid width='100%' alignItems='center' justifyContent='right'>
-              <Button style={{ justifyContent: 'center' }} variant='secondary' width={44} height={44}>
-                <Text weight={200} size='2rem'>
-                  +
-                </Text>
-              </Button>
-            </Grid>
-          </Grid>
+          <OwnerShipLock />
 
           <Grid margin='0.5rem 0' width='100%' gridTemplateColumns='1fr 2fr 1fr' alignItems='center'>
             <Grid alignSelf='center'>
