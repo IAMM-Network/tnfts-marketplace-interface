@@ -1,4 +1,4 @@
-import { ElementType, ReactNode } from 'react'
+import React, { ElementType, ReactNode } from 'react'
 import { LayoutProps, SpaceProps } from 'styled-system'
 import type { PolymorphicComponentProps } from '../../util/polymorphic'
 
@@ -20,4 +20,19 @@ export interface BaseButtonProps extends LayoutProps, SpaceProps {
   endIcon?: ReactNode
 }
 
+export interface BaseSquareButtonProps extends LayoutProps, SpaceProps {
+  borderRadius: number|string;
+  size: number|string;
+  rotation: boolean;
+  active: boolean;
+  onActived: () => any;
+  onDisabled: () => any;
+  Icon: React.ReactChild;
+  disabledBackground: string;
+  activeBackground: string;
+  iconDisabledColor: string;
+  iconActiveColor: string;
+}
+
 export type ButtonProps<P extends ElementType = 'button'> = PolymorphicComponentProps<P, BaseButtonProps>
+export type SquareButtonProps<P extends ElementType = 'button'> = PolymorphicComponentProps<P, BaseSquareButtonProps>
