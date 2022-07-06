@@ -82,3 +82,10 @@ export const TextArea = styled.textarea`
     opacity: 1; /* Firefox */
   }
 `
+
+export const Hr = styled.hr`
+  width: 100%;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  border-color: #8b40f4;
+`

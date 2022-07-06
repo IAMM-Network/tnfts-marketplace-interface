@@ -2,6 +2,7 @@ import { Grid } from '../../../../components/Box'
 import { Button } from '../../../../components/Button'
 import { KeyIcon } from '../../../../components/Svg'
 import useModal from '../../../../contexts/usePopup'
+import CircleButton from '../CircleButton'
 import { Text } from '../styles'
 import Popup from './popup'
 
@@ -17,9 +18,7 @@ const OwnerShipLock: React.FC = props => {
         <Text margin='0'>Lorem ipsum dolor sit amet</Text>
       </Grid>
       <Grid width='100%' alignItems='center' justifyContent='right'>
-        <Button style={{ justifyContent: 'center' }} variant='secondary' width={44} height={44}>
-          <Button onClick={onPresentCallback}>+</Button>
-        </Button>
+        <CircleButton active={true} onClick={() => alert('Ownership Lock')} />
       </Grid>
     </Grid>
   )

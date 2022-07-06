@@ -5,9 +5,10 @@ import HeadPurple from '../../assets/images/head-purple.png'
 import { Button } from '../../components/Button'
 import { AlertIcon, OpenEyeIcon, StarIcon, TextBaseIcon, TimelockIcon, VerticalBarsIcon } from '../../components/Svg'
 import { Toggle } from 'react-toggle-component'
-import { TitleSection, Text, Section, Input, MediaWrapper, Preview, TextArea } from './styles'
+import { TitleSection, Text, Section, Input, MediaWrapper, Preview, TextArea, Hr } from './styles'
 import { mediaOptions } from './Data'
 import OwnerShipLock from './components/OwnershipLock/OwnershipLock'
+import CircleButton from './components/CircleButton'
 
 const CreateSingleNFT = () => {
   const [name, setName] = useState<string>()
@@ -186,11 +187,7 @@ const CreateSingleNFT = () => {
               <Text margin='0'>Lorem ipsum dolor sit amet</Text>
             </Grid>
             <Grid width='100%' alignItems='center' justifyContent='right'>
-              <Button style={{ justifyContent: 'center' }} variant='secondary' width={44} height={44}>
-                <Text weight={200} size='2rem'>
-                  +
-                </Text>
-              </Button>
+              <CircleButton active={false} onClick={() => alert('Timelock')} />
             </Grid>
           </Grid>
 
@@ -203,11 +200,7 @@ const CreateSingleNFT = () => {
               <Text margin='0'>Lorem ipsum dolor sit amet</Text>
             </Grid>
             <Grid width='100%' alignItems='center' justifyContent='right'>
-              <Button style={{ justifyContent: 'center' }} variant='secondary' width={44} height={44}>
-                <Text weight={200} size='2rem'>
-                  +
-                </Text>
-              </Button>
+              <CircleButton active={true} onClick={() => alert('Generative')} />
             </Grid>
           </Grid>
         </Section>
@@ -229,11 +222,7 @@ const CreateSingleNFT = () => {
               <Text margin='0'>Text traits that show up as rectangles</Text>
             </Grid>
             <Grid width='100%' alignItems='center' justifyContent='right'>
-              <Button style={{ justifyContent: 'center' }} variant='secondary' width={44} height={44}>
-                <Text weight={200} size='2rem'>
-                  +
-                </Text>
-              </Button>
+              <CircleButton active={true} onClick={() => alert('Properties')} />
             </Grid>
           </Grid>
 
@@ -246,11 +235,7 @@ const CreateSingleNFT = () => {
               <Text margin='0'>Numerical trait that show up as a progress bar</Text>
             </Grid>
             <Grid width='100%' alignItems='center' justifyContent='right'>
-              <Button style={{ justifyContent: 'center' }} variant='secondary' width={44} height={44}>
-                <Text weight={200} size='2rem'>
-                  +
-                </Text>
-              </Button>
+              <CircleButton active={false} onClick={() => alert('Levels')} />
             </Grid>
           </Grid>
 
@@ -263,11 +248,7 @@ const CreateSingleNFT = () => {
               <Text margin='0'>Numerical trait that show as numbers</Text>
             </Grid>
             <Grid width='100%' alignItems='center' justifyContent='right'>
-              <Button style={{ justifyContent: 'center' }} variant='secondary' width={44} height={44}>
-                <Text weight={200} size='2rem'>
-                  +
-                </Text>
-              </Button>
+              <CircleButton active={true} onClick={() => alert('Stats')} />
             </Grid>
           </Grid>
 
@@ -301,7 +282,9 @@ const CreateSingleNFT = () => {
           <Input type='number' placeholder='#' value={supply} onChange={e => setSupply(parseInt(e.target.value, 10))} />
         </Section>
 
-        <Flex justifyContent='center'>
+        <Hr />
+
+        <Flex justifyContent='center' marginBottom='6rem'>
           <Button onClick={createNFT} variant='cta'>
             {mintingStatus === 0 ? 'Create' : 'Minting...'}
           </Button>
