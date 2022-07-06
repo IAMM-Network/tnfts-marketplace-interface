@@ -33,16 +33,18 @@ const Header: React.FC = () => {
 
   const getRender = (): boolean => pathname !== '/'
 
-  return (
-    <HeaderWrapper main={getRender()}>
-      <Container maxWidth='90%'>
-        <Flex alignItems='center' justifyContent='space-between' width='100%'>
-          <IAMMTextIcon width='100px' fill='white' />
-          {getRender() ? hamburguerMenu('white', isOpen, setIsOpen) : socialMedia()}
-        </Flex>
-      </Container>
-    </HeaderWrapper>
-  )
+  if (pathname !== '/profile-dashboard')
+    return (
+      <HeaderWrapper main={getRender()}>
+        <Container maxWidth='90%'>
+          <Flex alignItems='center' justifyContent='space-between' width='100%'>
+            <IAMMTextIcon width='100px' fill='white' />
+            {getRender() ? hamburguerMenu('white', isOpen, setIsOpen) : socialMedia()}
+          </Flex>
+        </Container>
+      </HeaderWrapper>
+    )
+  return <div></div>
 }
 
 export default Header

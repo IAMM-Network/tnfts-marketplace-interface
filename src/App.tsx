@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import { Header } from './components/Header'
-import { RoutesData } from './views/RoutesData'
+import { RoutesData } from './pages/RoutesData'
 
 import './App.css'
 
