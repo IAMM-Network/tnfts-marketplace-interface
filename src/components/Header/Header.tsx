@@ -33,7 +33,7 @@ const Header: React.FC = () => {
 
   const getRender = (): boolean => pathname !== '/'
 
-  return (
+  if (pathname !== "/profile-dashboard") return (
     <HeaderWrapper main={getRender()}>
       <Container maxWidth='90%'>
         <Flex alignItems='center' justifyContent='space-between' width='100%'>
@@ -43,6 +43,7 @@ const Header: React.FC = () => {
       </Container>
     </HeaderWrapper>
   )
+  return <div></div>
 }
 
 export default Header
