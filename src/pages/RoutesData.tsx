@@ -19,5 +19,5 @@ export const RoutesData = [
   {
     view: <Profile />,
     path: 'profile-dashboard',
-  }
+  },
 ]
